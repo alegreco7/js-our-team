@@ -33,3 +33,29 @@ let employees = [
     },   
 ]
 console.log(employees);
+
+// ciclo info dipendenti
+
+let employees_display = document.getElementById('employees_container');
+
+for(let i = 0; i<employees.length ; i++){
+
+    let div = document.createElement('div');
+    div.classList.add('col-4', 'p-3', 'text-white');
+
+    let cardImg = document.createElement('div');
+    cardImg.innerHTML = `<img src='../js-our-team/img/${employees[i].image}'>`;
+
+    let cardName = document.createElement('div');
+    cardName.classList.add('mt-3')
+    cardName.innerHTML = `<h3>${employees[i].name}</h3>`;
+
+    let cardRole = document.createElement('div');
+    cardRole.innerHTML = `<h4>${employees[i].role}</h4>`;
+
+    div.appendChild(cardImg);
+    div.appendChild(cardName);
+    div.appendChild(cardRole);
+
+    employees_display.appendChild(div);
+}
